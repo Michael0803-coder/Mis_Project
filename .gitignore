@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local mail credentials
+api/mail_config.local.php
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
