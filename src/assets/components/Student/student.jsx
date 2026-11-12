@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   BookOpen, 
   GraduationCap, 
@@ -7,12 +7,12 @@ import {
   CheckCircle, 
   FileText, 
   Bell, 
-  User, 
   LogOut, 
   ChevronRight, 
   TrendingUp,
   AlertCircle
 } from 'lucide-react';
+import { logout } from '../../../lib/auth.js';
 
 export default function StudentLandingPage() {
   // Mock student data (In a real MIS, this comes from an API/database)
@@ -71,7 +71,13 @@ export default function StudentLandingPage() {
                   <p className="text-xs text-slate-500 mt-1">{student.studentId}</p>
                 </div>
               </div>
-              <button className="text-slate-400 hover:text-rose-600 p-2 rounded-lg hover:bg-rose-50 transition">
+              <button
+                type="button"
+                onClick={logout}
+                className="text-slate-400 hover:text-rose-600 p-2 rounded-lg hover:bg-rose-50 transition"
+                aria-label="Sign out"
+                title="Sign out"
+              >
                 <LogOut className="h-5 w-5" />
               </button>
             </div>
